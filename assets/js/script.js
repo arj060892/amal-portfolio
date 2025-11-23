@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       const workSamplesGrid = document.getElementById('work-samples-grid');
       let portfolioHTML = '';
+      const animations = ['fade-up', 'fade-down', 'fade-right', 'fade-left', 'zoom-in', 'zoom-out'];
 
-      data.work_samples.forEach(item => {
+      data.work_samples.forEach((item, index) => {
         let cardContent = '';
+        const animation = animations[index % animations.length]; // Cycle through animations
 
         if (item.type === 'image') {
           cardContent = `<img src="${item.src}" class="card-img-top" alt="${item.title}">`;
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         portfolioHTML += `
-          <div class="col-md-4 mb-4" data-aos="fade-up">
+          <div class="col-md-4 mb-4" data-aos="${animation}">
             <div class="card h-100">
               ${cardContent}
               <div class="card-body">

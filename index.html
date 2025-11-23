@@ -6,81 +6,117 @@
     <title>Amal Ragulan Jayasree | Digital Marketing & Content Specialist</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+      .sidebar {
+        background-color: #fff;
+        border-right: 1px solid #dee2e6;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 700;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .section-bg {
+        background-color: #fff;
+        border-radius: 0.5rem;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.05);
+      }
+      .card {
+        border: none;
+        box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <!-- Left Pane (Sidebar) -->
-            <div class="col-md-3 vh-100 overflow-auto border-end" style="position: fixed;">
+            <div class="col-md-3 vh-100 overflow-auto sidebar" style="position: fixed;">
                 <div class="p-4 text-center">
-                    <img src="assets/images/profile.jpg" class="img-fluid rounded-circle mb-3" alt="Amal Ragulan Jayasree">
+                    <img src="assets/images/profile.jpg" class="img-fluid rounded-circle mb-3" alt="Amal Ragulan Jayasree" style="width: 150px; height: 150px; object-fit: cover;">
                     <h3 class="mb-1">Amal Ragulan Jayasree</h3>
                     <p class="text-muted">Digital Marketing & Content Specialist</p>
                     <hr>
                     <div class="text-start">
-                        <p><strong>Location:</strong> Auckland, New Zealand</p>
-                        <p><strong>Email:</strong> <a href="mailto:amalrj56@gmail.com">amalrj56@gmail.com</a></p>
-                        <p><strong>Phone:</strong> <a href="tel:+64272569190">+64 27 256 9190</a></p>
-                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/amalrj" target="_blank">linkedin.com/in/amalrj</a></p>
-                        <p><strong>Instagram:</strong> <a href="https://instagram.com/amalrj" target="_blank">instagram.com/amalrj</a></p>
+                        <p><i class="bi bi-geo-alt-fill me-2"></i>Auckland, New Zealand</p>
+                        <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:amalrj56@gmail.com">amalrj56@gmail.com</a></p>
+                        <p><i class="bi bi-telephone-fill me-2"></i><a href="tel:+64272569190">+64 27 256 9190</a></p>
+                        <p><i class="bi bi-linkedin me-2"></i><a href="https://linkedin.com/in/amalrj" target="_blank">linkedin.com/in/amalrj</a></p>
+                        <p><i class="bi bi-instagram me-2"></i><a href="https://instagram.com/amalrj" target="_blank">instagram.com/amalrj</a></p>
                     </div>
-                    <a href="assets/pdfs/Amal_CV.pdf" class="btn btn-primary w-100 mt-3" download>Download CV</a>
+                    <a href="assets/pdfs/Amal_CV.pdf" class="btn btn-primary w-100 mt-3" download><i class="bi bi-download me-2"></i>Download CV</a>
                 </div>
             </div>
 
             <!-- Right Pane (Main Content) -->
             <div class="col-md-9 offset-md-3">
-                <div class="p-4">
+                <div class="p-4 mt-5">
                     <!-- About Me -->
-                    <section id="about" class="mb-5">
+                    <section id="about" class="section-bg">
                         <h2>About Me</h2>
                         <p>Amal is a results-driven digital marketer with experience across social media management, content creation, SEO, paid advertising, email marketing, and CRM tools like HubSpot and Salesforce. He has delivered high-engagement digital campaigns for community organisations, event brands, and real estate marketing teams. He is skilled at designing creatives, editing videos, building content calendars, optimising campaigns, and reporting using GA4 and Looker Studio. Amal brings a mix of creativity, organisation, and data-driven thinking to every project.</p>
                     </section>
 
                     <!-- Skills -->
-                    <section id="skills" class="mb-5">
+                    <section id="skills" class="section-bg">
                         <h2>Skills</h2>
                         <div class="row">
                             <div class="col-md-4">
-                                <h5>Digital Marketing</h5>
-                                <ul>
-                                    <li>Social Media: Instagram, Facebook, YouTube</li>
-                                    <li>Meta Ads Manager</li>
-                                    <li>Google Ads</li>
-                                    <li>SEO & SEM</li>
-                                    <li>Campaign Planning & Execution</li>
-                                    <li>Content Strategy</li>
-                                    <li>GA4, Looker Studio</li>
-                                    <li>Email Marketing (Mailchimp, HubSpot)</li>
+                                <h5><i class="bi bi-bar-chart-fill me-2"></i>Digital Marketing</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Social Media: Instagram, Facebook, YouTube</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Meta Ads Manager</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Google Ads</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>SEO & SEM</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Campaign Planning & Execution</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Content Strategy</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>GA4, Looker Studio</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Email Marketing (Mailchimp, HubSpot)</li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
-                                <h5>Design & Editing</h5>
-                                <ul>
-                                    <li>Canva</li>
-                                    <li>Photoshop</li>
-                                    <li>Premiere Pro</li>
-                                    <li>After Effects</li>
-                                    <li>Blender</li>
-                                    <li>Animation basics</li>
+                                <h5><i class="bi bi-palette-fill me-2"></i>Design & Editing</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Canva</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Photoshop</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Premiere Pro</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>After Effects</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Blender</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Animation basics</li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
-                                <h5>CRM & Tools</h5>
-                                <ul>
-                                    <li>HubSpot</li>
-                                    <li>Salesforce</li>
-                                    <li>Zoho CRM</li>
-                                    <li>WordPress</li>
-                                    <li>Squarespace</li>
-                                    <li>SEMrush</li>
+                                <h5><i class="bi bi-tools me-2"></i>CRM & Tools</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>HubSpot</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Salesforce</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Zoho CRM</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>WordPress</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>Squarespace</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-primary"></i>SEMrush</li>
                                 </ul>
                             </div>
                         </div>
                     </section>
 
                     <!-- Work Samples -->
-                    <section id="samples" class="mb-5">
+                    <section id="samples" class="section-bg">
                         <h2>Work Samples</h2>
                         <div id="work-samples-grid" class="row">
                             <!-- Portfolio items will be dynamically injected here -->
@@ -88,13 +124,13 @@
                     </section>
 
                     <!-- Resume Viewer -->
-                    <section id="resume" class="mb-5">
+                    <section id="resume" class="section-bg">
                         <h2>Resume</h2>
                         <iframe src="assets/pdfs/Amal_CV.pdf" width="100%" height="800px"></iframe>
                     </section>
 
                     <!-- Experience -->
-                    <section id="experience" class="mb-5">
+                    <section id="experience" class="section-bg">
                         <h2>Experience</h2>
                         <div class="card mb-3">
                             <div class="card-body">
