@@ -1,0 +1,50 @@
+{
+  "work": [
+    {
+      "type": "image",
+      "title": "Event Campaign Poster",
+      "description": "Social-first creative designed for an event awareness campaign.",
+      "url": "assets/images/work1.png"
+    },
+    {
+      "type": "image",
+      "title": "Event Campaign Poster",
+      "description": "Social-first creative designed for an event awareness campaign.",
+      "url": "assets/images/work2.png"
+    },
+    {
+      "type": "image",
+      "title": "Event Campaign Poster",
+      "description": "Social-first creative designed for an event awareness campaign.",
+      "url": "assets/images/work3.png"
+    },
+    {
+      "type": "image",
+      "title": "Event Campaign Poster",
+      "description": "Social-first creative designed for an event awareness campaign.",
+      "url": "assets/images/work4.png"
+    },
+    {
+      "type": "youtube",
+      "title": "Highlight Reel – Event",
+      "description": "Short highlight edit used for Instagram and YouTube.",
+      "url": "https://youtu.be/8Csr520QG6Y?si=klvbm-RSKszE0PSm"
+    },
+    {
+      "type": "instagram",
+      "title": "Instagram Reel – Engagement Boost",
+      "url": "https://www.instagram.com/tv/CFjk0pKnOyN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    },
+    {
+      "type": "gdrive-video",
+      "title": "Promotion Video – Google Drive",
+      "url": "https://drive.google.com/file/d/1U-8vB22rAaGp5UgozoS78ZmcaBi9Ll1n/view?usp=sharing"
+    },
+    {
+      "type": "pdf",
+      "title": "My Resume",
+      "description": "Summary of results from a multi-channel campaign.",
+      "url": "assets/pdfs/Amal_CV.pdf"
+    }
+  ]
+}

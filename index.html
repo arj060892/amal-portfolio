@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amal RJ | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <!-- AOS Animations -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        min-height: 100vh;
+        background: radial-gradient(
+            circle at top left,
+            #f1f4ff 0,
+            transparent 55%
+          ),
+          radial-gradient(circle at bottom right, #ffeef4 0, transparent 55%),
+          #f5f6f8;
+        color: #212529;
+      }
+
+      .page-shell {
+        max-width: 1200px;
+      }
+
+      .sidebar-card {
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 1.5rem;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        backdrop-filter: blur(12px);
+      }
+
+      .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+      }
+
+      .avatar-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.25rem 0.7rem;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        background: #f1f5f9;
+        color: #0f172a;
+      }
+
+      .pill i {
+        font-size: 0.9rem;
+      }
+
+      .main-content-card {
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 1.5rem;
+        box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+        padding: 2.5rem;
+      }
+
+      @media (max-width: 991.98px) {
+        .main-content-card {
+          margin-top: 1.5rem;
+          border-radius: 1.25rem;
+          padding: 1.75rem;
+        }
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-title i {
+        font-size: 1.2rem;
+        color: #6366f1;
+      }
+
+      .badge-skill {
+        background: #eef2ff;
+        color: #312e81;
+        font-weight: 500;
+        margin: 0.15rem;
+      }
+
+      .work-item {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        border-radius: 1rem;
+        background: #f9fafb;
+      }
+
+      .work-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      }
+
+      .work-item h5 {
+        font-size: 0.98rem;
+      }
+
+      iframe {
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container py-4 py-lg-5 page-shell">
+      <div class="row g-4 g-lg-5">
+        <!-- LEFT PANE -->
+        <div class="col-12 col-lg-4">
+          <aside
+            class="sidebar-card p-4 p-lg-4 position-lg-sticky top-0"
+            data-aos="fade-right"
+          >
+            <div class="text-center mb-4">
+              <div class="avatar-wrapper mb-3">
+                <img
+                  src="assets/images/profile.jpg"
+                  alt="Profile photo of Amal RJ"
+                />
+              </div>
+              <h3 class="fw-bold mb-1">Amal Ragulan Jayasree</h3>
+              <p class="text-muted mb-2">
+                Digital Marketing &amp; Content Specialist
+              </p>
+              <div class="d-flex justify-content-center flex-wrap gap-2">
+                <span class="pill">
+                  <i class="bi bi-geo-alt-fill"></i> Auckland, New Zealand
+                </span>
+                <span class="pill">
+                  <i class="bi bi-briefcase-fill"></i> Open to roles
+                </span>
+              </div>
+            </div>
+
+            <hr class="my-3" />
+
+            <div class="small mb-3">
+              <p class="mb-2">
+                <i class="bi bi-envelope-fill me-2"></i>
+                <a href="mailto:amalrj56@gmail.com">amalrj56@gmail.com</a>
+              </p>
+              <p class="mb-2">
+                <i class="bi bi-telephone-fill me-2"></i>
+                +64 27 256 9190
+              </p>
+              <p class="mb-2">
+                <i class="bi bi-linkedin me-2"></i>
+                <a href="#" target="_blank">linkedin.com/in/amalrj</a>
+              </p>
+              <p class="mb-2">
+                <i class="bi bi-instagram me-2"></i>
+                <a href="#" target="_blank">@amalrj</a>
+              </p>
+            </div>
+
+            <div class="d-grid mt-3">
+              <a
+                class="btn btn-dark btn-sm"
+                href="assets/pdfs/Amal_CV.pdf"
+                download
+              >
+                <i class="bi bi-file-earmark-arrow-down me-1"></i>
+                Download Resume
+              </a>
+            </div>
+          </aside>
+        </div>
+
+        <!-- RIGHT PANE -->
+        <div class="col-12 col-lg-8">
+          <main class="main-content-card" data-aos="fade-up">
+            <!-- ABOUT -->
+            <section class="mb-4 mb-lg-5">
+              <div class="section-title">
+                <i class="bi bi-person-lines-fill"></i>
+                <span>About</span>
+              </div>
+              <p class="mb-0">
+                Amal is a digital marketing and content specialist with hands-on
+                experience across social media, SEO, paid campaigns, and
+                CRM-based email journeys. He has worked on campaigns for
+                community organisations, event brands, and real estate teams –
+                planning content, designing creatives, editing video, and
+                reporting on performance using GA4 and Looker Studio. He
+                combines creative execution with data-driven thinking to grow
+                reach, engagement, and conversions.
+              </p>
+            </section>
+
+            <!-- SKILLS -->
+            <section class="mb-4 mb-lg-5">
+              <div class="section-title">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Skills</span>
+              </div>
+              <div class="mb-2 small text-muted">
+                Digital Marketing & Platforms
+              </div>
+              <div class="mb-3">
+                <span class="badge badge-skill">Google Ads</span>
+                <span class="badge badge-skill">Meta Ads Manager</span>
+                <span class="badge badge-skill">Instagram</span>
+                <span class="badge badge-skill">Facebook</span>
+                <span class="badge badge-skill">YouTube</span>
+                <span class="badge badge-skill">SEO &amp; SEM</span>
+                <span class="badge badge-skill">Email Marketing</span>
+                <span class="badge badge-skill">GA4</span>
+                <span class="badge badge-skill">Looker Studio</span>
+              </div>
+
+              <div class="mb-2 small text-muted">Content, Design & Video</div>
+              <div class="mb-3">
+                <span class="badge badge-skill">Canva</span>
+                <span class="badge badge-skill">Photoshop</span>
+                <span class="badge badge-skill">Premiere Pro</span>
+                <span class="badge badge-skill">After Effects</span>
+                <span class="badge badge-skill">Animation Fundamentals</span>
+              </div>
+
+              <div class="mb-2 small text-muted">CRM & Tools</div>
+              <div>
+                <span class="badge badge-skill">HubSpot</span>
+                <span class="badge badge-skill">Salesforce</span>
+                <span class="badge badge-skill">Zoho CRM</span>
+                <span class="badge badge-skill">WordPress</span>
+                <span class="badge badge-skill">Squarespace</span>
+                <span class="badge badge-skill">SEMrush</span>
+              </div>
+            </section>
+
+            <!-- WORK SAMPLES -->
+            <section class="mb-4 mb-lg-5">
+              <div class="section-title">
+                <i class="bi bi-layout-wtf"></i>
+                <span>Work Samples</span>
+              </div>
+              <p class="small text-muted mb-3">
+                A mix of social media creatives, campaign visuals, short video
+                edits, and reports from different projects. All items below are
+                driven from a JSON file so new work can be added without
+                touching the HTML.
+              </p>
+              <div id="work-feed" class="mt-3"></div>
+            </section>
+
+            <!-- RESUME VIEWER -->
+            <section class="mb-4 mb-lg-5">
+              <div class="section-title">
+                <i class="bi bi-file-earmark-text-fill"></i>
+                <span>Resume</span>
+              </div>
+              <p class="small text-muted mb-2">
+                Inline viewer for quick review – recruiters can scroll, zoom, or
+                download directly.
+              </p>
+              <div class="ratio ratio-4x3">
+                <iframe src="assets/pdfs/Amal_CV.pdf"></iframe>
+              </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section>
+              <div class="section-title">
+                <i class="bi bi-send-fill"></i>
+                <span>Contact</span>
+              </div>
+              <p class="mb-3">
+                If you’d like to discuss a role or see more work, feel free to
+                reach out directly.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <a
+                  href="mailto:amalrj56@gmail.com"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="bi bi-envelope me-1"></i> Email Amal
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="btn btn-outline-secondary btn-sm"
+                >
+                  <i class="bi bi-linkedin me-1"></i> View LinkedIn
+                </a>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <!-- AOS Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        offset: 80,
+        duration: 600,
+      });
+    </script>
+
+    <!-- Content Loader -->
+    <script src="js/content-loader.js"></script>
+  </body>
+</html>
