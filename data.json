@@ -1,0 +1,24 @@
+{
+  "work_samples": [
+    {
+      "type": "image",
+      "src": "assets/images/sample1.jpg",
+      "title": "Image Sample 1"
+    },
+    {
+      "type": "image",
+      "src": "assets/images/sample2.jpg",
+      "title": "Image Sample 2"
+    },
+    {
+      "type": "youtube",
+      "src": "https://www.youtube.com/embed/VIDEO_ID",
+      "title": "YouTube Embed"
+    },
+    {
+      "type": "instagram",
+      "src": "INSTAGRAM_EMBED_URL",
+      "title": "Instagram Reel"
+    }
+  ]
+}
