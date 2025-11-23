@@ -1,0 +1,39 @@
+﻿{
+  "categories": [
+    {
+      "name": "Digital Marketing",
+      "items": [
+        "Social Media: Instagram, Facebook, YouTube",
+        "Meta Ads Manager",
+        "Google Ads",
+        "SEO & SEM",
+        "Campaign Planning & Execution",
+        "Content Strategy",
+        "GA4, Looker Studio",
+        "Email Marketing (Mailchimp, HubSpot)"
+      ]
+    },
+    {
+      "name": "Design & Editing",
+      "items": [
+        "Canva",
+        "Photoshop",
+        "Premiere Pro",
+        "After Effects",
+        "Blender",
+        "Animation basics"
+      ]
+    },
+    {
+      "name": "CRM & Tools",
+      "items": [
+        "HubSpot",
+        "Salesforce",
+        "Zoho CRM",
+        "WordPress",
+        "Squarespace",
+        "SEMrush"
+      ]
+    }
+  ]
+}
