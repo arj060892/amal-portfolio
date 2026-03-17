@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Amal RJ | Portfolio</title>
+    <title>Amal RJ | Ad Ops & Marketing Ops Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Amal Ragulan Jayasree — Ad Operations & Marketing Operations (GA4, GTM, HubSpot, reporting, campaign coordination)."
+    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -466,6 +473,81 @@
         color: var(--accent) !important;
       }
 
+      .work-thumb {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #111830;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        cursor: pointer;
+      }
+
+      .work-meta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 12px 12px 10px;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.82),
+          rgba(0, 0, 0, 0.05)
+        );
+        pointer-events: none;
+      }
+
+      .work-title {
+        font-size: 0.86rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.2;
+      }
+
+      .work-subtitle {
+        margin-top: 4px;
+        font-size: 0.74rem;
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .work-tags {
+        margin-top: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .work-tag {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .pdf-embed {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        pointer-events: none;
+        background: #111830;
+      }
+
+      .pdf-fallback {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.75);
+        background: #111830;
+      }
+
       #photo-gallery .photo-thumb {
         position: relative;
         border-radius: 14px;
@@ -714,24 +796,27 @@
         <!-- Avatar -->
         <div class="avatar-wrapper mb-2">
           <div class="avatar-inner">
-            <img src="assets/images/profile.jpg" alt="Profile of Amal" />
+            <img src="assets/images/profile.jpg?v=20260317" alt="Profile of Amal" />
           </div>
         </div>
 
         <!-- Name -->
         <h4 class="sidebar-name mb-1">Amal Ragulan Jayasree</h4>
-        <p class="sidebar-role mb-3">Digital Marketing & Content Specialist</p>
+        <p class="sidebar-role mb-3">Ad Operations & Marketing Operations</p>
 
         <!-- Pills -->
         <div class="d-flex flex-column align-items-center gap-2 mb-3">
           <span class="pill">
-            <i class="bi bi-geo-alt-fill"></i><span>Auckland, NZ</span>
+            <i class="bi bi-geo-alt-fill"></i
+            ><span>Auckland, NZ</span>
           </span>
           <span class="pill">
-            <i class="bi bi-briefcase-fill"></i><span>Open to Roles</span>
+            <i class="bi bi-briefcase-fill"></i
+            ><span>Open to Ad Ops/MarOps</span>
           </span>
           <span class="pill">
-            <i class="bi bi-passport-fill"></i><span>Open Work Visa (NZ)</span>
+            <i class="bi bi-passport-fill"></i
+            ><span>Work visa until Sep 2027</span>
           </span>
         </div>
 
@@ -773,10 +858,10 @@
         <!-- Download Resume -->
         <button
           class="btn-cta btn-sm mt-3"
-          onclick="window.open('assets/pdfs/Amal_CV.pdf', '_blank')"
+          onclick="window.open('assets/pdfs/Amal_RJ_AdOps_MarOps_CV.pdf?v=20260317', '_blank')"
         >
           <i class="bi bi-file-earmark-arrow-down"></i>
-          <span>Download Resume</span>
+          <span>Download CV</span>
         </button>
       </div>
     </aside>
@@ -795,46 +880,33 @@
                 <span>About</span>
               </div>
               <p class="section-subtitle">
-                A quick snapshot of what I do and the type of impact I create.
+                A quick snapshot of what I do and the impact I create.
               </p>
             </div>
           </div>
 
           <div class="about-text">
             <p>
-              With over <strong>4 years of experience</strong> in digital
-              marketing and content creation, I’ve built a career around helping
-              brands communicate clearly and grow with intention. I love the
-              balance of creativity and strategy, the part where a scattered
-              idea becomes a piece of content that actually connects with
-              people.
+              With over <strong>4 years of experience</strong> across digital
+              marketing, <strong>Ad Operations</strong>, and
+              <strong>Marketing Operations</strong>, I help teams run campaigns
+              smoothly, track them accurately, and turn results into clear next
+              steps.
             </p>
 
             <p>
-              My work spans <strong>social media management</strong>,
-              <strong>SEO</strong>, <strong>paid ads</strong>,
-              <strong>email journeys</strong>,
-              <strong>campaign planning</strong>, and
-              <strong>performance reporting</strong>. But what I enjoy most is
-              shaping the narrative-turning loose thoughts, screenshots, or
-              half-formed concepts into scroll-stopping content that feels
-              intentional.
-            </p>
-
-            <p>
-              I create static posts, reels, carousels, landing page content, and
-              campaign assets that are both visually sharp and
-              performance-driven. I work closely with tools like
-              <strong>GA4</strong>, <strong>Meta Ads Manager</strong>,
-              <strong>HubSpot</strong>, and <strong>Salesforce</strong> to
-              understand what works, optimise what doesn’t, and make sure every
-              piece of content has purpose.
+              My work includes campaign setup support (email, social, and
+              display), creative spec checks, segmentation and database hygiene,
+              and performance reporting using <strong>GA4</strong>,
+              <strong>Google Tag Manager (GTM)</strong>, <strong>HubSpot</strong>,
+              and <strong>Excel / Looker Studio</strong>.
             </p>
 
             <p class="mb-0">
-              At the heart of it, I like building things that feel
-              thoughtful-content with direction, campaigns with intention, and
-              stories people don’t just scroll past, but remember.
+              I'm detail-oriented and process-driven, comfortable partnering
+              with sales and marketing to troubleshoot tracking, spot trends and
+              anomalies, and improve acquisition, engagement, and conversion
+              outcomes.
             </p>
           </div>
         </div>
@@ -850,37 +922,45 @@
             <span>Skills</span>
           </div>
           <p class="section-subtitle">
-            A quick view of the platforms and tools I’m comfortable driving.
+            Tools and workflows I use to keep campaigns organised, tracked, and report-ready.
           </p>
 
           <div class="mb-3">
-            <div class="skills-group-label">
-              Digital Marketing &amp; Platforms
-            </div>
+            <div class="skills-group-label">Campaign Operations &amp; Ad Support</div>
             <div>
-              <span class="badge-skill">Google Ads</span>
-              <span class="badge-skill">Meta Ads Manager</span>
-              <span class="badge-skill">Instagram</span>
-              <span class="badge-skill">Facebook</span>
-              <span class="badge-skill">SEO &amp; SEM</span>
+              <span class="badge-skill">Campaign setup &amp; coordination</span>
+              <span class="badge-skill">Ad trafficking fundamentals</span>
+              <span class="badge-skill">Creative spec checks</span>
+              <span class="badge-skill">Google Ads (Search/Display)</span>
+              <span class="badge-skill">Programmatic concepts (DSP/SSP)</span>
+              <span class="badge-skill">Optimisation support</span>
+              <span class="badge-skill">Pacing &amp; frequency basics</span>
             </div>
           </div>
 
           <div class="mb-3">
-            <div class="skills-group-label">Content, Design &amp; Video</div>
+            <div class="skills-group-label">CRM &amp; Marketing Automation</div>
             <div>
-              <span class="badge-skill">Canva</span>
-              <span class="badge-skill">Photoshop</span>
-              <span class="badge-skill">Premiere Pro</span>
+              <span class="badge-skill">HubSpot CRM</span>
+              <span class="badge-skill">Segmentation</span>
+              <span class="badge-skill">Workflows &amp; automation</span>
+              <span class="badge-skill">Lifecycle email campaigns</span>
+              <span class="badge-skill">List management</span>
+              <span class="badge-skill">Database hygiene</span>
             </div>
           </div>
 
           <div>
-            <div class="skills-group-label">CRM &amp; Tools</div>
+            <div class="skills-group-label">Analytics &amp; Reporting</div>
             <div>
-              <span class="badge-skill">HubSpot</span>
-              <span class="badge-skill">Salesforce</span>
-              <span class="badge-skill">SEMrush</span>
+              <span class="badge-skill">GA4</span>
+              <span class="badge-skill">Google Tag Manager (GTM)</span>
+              <span class="badge-skill">Looker Studio</span>
+              <span class="badge-skill">Post-campaign analysis</span>
+              <span class="badge-skill">Excel (Pivot tables)</span>
+              <span class="badge-skill">CTR/CVR calculations</span>
+              <span class="badge-skill">Data cleaning</span>
+              <span class="badge-skill">Trend &amp; anomaly spotting</span>
             </div>
           </div>
         </div>
@@ -900,7 +980,7 @@
                 <span>Work Samples</span>
               </div>
               <p class="section-subtitle mb-0">
-                Selected creatives, campaigns, and visuals. Swipe or click
+                Dashboards, creatives, and selected work samples. Swipe or click
                 through each tab.
               </p>
             </div>
@@ -910,6 +990,16 @@
               <li class="nav-item">
                 <button
                   class="nav-link active"
+                  data-bs-target="#dashboards-pane"
+                  data-bs-toggle="tab"
+                  type="button"
+                >
+                  Dashboards
+                </button>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="nav-link"
                   data-bs-target="#images-pane"
                   data-bs-toggle="tab"
                   type="button"
@@ -951,8 +1041,20 @@
           </div>
 
           <div class="tab-content">
+            <!-- Dashboards -->
+            <div class="tab-pane fade show active" id="dashboards-pane">
+              <div class="swiper" id="dashboards-swiper">
+                <div
+                  class="swiper-wrapper"
+                  id="dashboards-swiper-wrapper"
+                ></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+              </div>
+            </div>
+
             <!-- Images -->
-            <div class="tab-pane fade show active" id="images-pane">
+            <div class="tab-pane fade" id="images-pane">
               <div class="swiper" id="images-swiper">
                 <div class="swiper-wrapper" id="images-swiper-wrapper"></div>
                 <div class="swiper-button-next"></div>
@@ -981,17 +1083,7 @@
             <!-- Photography -->
             <div class="tab-pane fade" id="photo-pane">
               <div id="photo-gallery" class="row g-3">
-                <!-- content-loader.js should populate this;
-                     here’s an example structure if you ever do it manually:
-                <div class="col-6 col-md-4 col-lg-3">
-                  <div class="photo-thumb">
-                    <img src="assets/photos/sample.jpg" alt="Sample" />
-                    <div class="photo-overlay">
-                      <span>Campaign shoot · 2024</span>
-                    </div>
-                  </div>
-                </div>
-                -->
+                <!-- content-loader.js should populate this -->
               </div>
             </div>
           </div>
@@ -1041,20 +1133,20 @@
               </p>
               <ul class="text-muted small">
                 <li>
-                  Delivered social-first campaigns for branded events,
-                  increasing sign-ups by 30%.
+                  Coordinated social-first campaigns for events, increasing
+                  sign-ups by 30%.
                 </li>
                 <li>
-                  Produced reels, teasers, highlights and creative assets,
+                  Planned, filmed, and edited content for social channels,
                   boosting engagement by 35%.
                 </li>
                 <li>
-                  Managed CRM segmentation & automated email journeys
-                  (Mailchimp, HubSpot).
+                  Managed CRM segmentation, list hygiene, and automated email
+                  flows (HubSpot / Mailchimp).
                 </li>
                 <li>
-                  Tracked & reported performance using GA4, Meta Insights and
-                  Looker Studio.
+                  Produced performance reporting using GA4 and Looker Studio;
+                  partnered with sales on lead-gen tracking.
                 </li>
               </ul>
             </div>
@@ -1071,20 +1163,19 @@
               </p>
               <ul class="text-muted small">
                 <li>
-                  Designed digital assets & visuals to support donation
-                  campaigns and community initiatives.
+                  Created digital campaigns to increase community awareness and
+                  support donation activity.
                 </li>
                 <li>
-                  Improved SEO on WordPress & Squarespace for service visibility
-                  and reach.
+                  Designed visuals and content calendars for social platforms.
                 </li>
                 <li>
-                  Produced videos and marketing collateral to support
-                  fundraising efforts.
+                  Supported SEO improvements on WordPress / Squarespace to
+                  improve discoverability.
                 </li>
                 <li>
-                  Drove volunteer sign-ups through targeted social media
-                  strategies.
+                  Increased volunteer sign-ups through targeted content and
+                  community engagement.
                 </li>
               </ul>
             </div>
@@ -1103,14 +1194,13 @@
                   Designed creatives, brochures, and brand-aligned marketing
                   materials.
                 </li>
-                <li>Improved SEO for property listings and digital content.</li>
+                <li>Supported SEO optimisation for property listings.</li>
                 <li>
-                  Supported agents with content scheduling, analytics and
-                  branding.
+                  Scheduled posts and tracked engagement analytics.
                 </li>
                 <li>
-                  Coordinated on-site marketing events and community
-                  initiatives.
+                  Supported agents with campaign coordination and brand
+                  consistency.
                 </li>
               </ul>
             </div>
@@ -1210,9 +1300,10 @@
             If this looks aligned with what you’re hiring for, I’d love to chat.
           </p>
           <p>
-            I’m available for digital marketing, content, and hybrid
-            marketing–ops roles. If you’d like to discuss a role, see more work,
-            or walk through a specific campaign in detail, just drop me a line.
+            I’m available for Ad Operations, Marketing Operations, and
+            performance reporting roles. If you’d like to discuss a role, see
+            more work, or walk through a dashboard or campaign workflow, just
+            drop me a line.
           </p>
           <button
             class="btn-contact"
@@ -1234,7 +1325,11 @@
       pdfjsLib.GlobalWorkerOptions.workerSrc =
         "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
     </script>
-    <script src="js/content-loader.js"></script>
+    <script>
+      window.__SITE_VERSION__ = "20260317";
+    </script>
+    <script src="data/content-inline.js?v=20260317"></script>
+    <script src="js/content-loader.js?v=20260317"></script>
 
     <script>
       // Simple reveal-on-scroll
@@ -1251,30 +1346,9 @@
         { threshold: 0.15 }
       );
       revealEls.forEach((el) => observer.observe(el));
-
-      // Basic Swiper init – content-loader.js can still override/extend if needed.
-      const initSwiper = (selector) => {
-        const el = document.querySelector(selector);
-        if (!el) return null;
-        return new Swiper(selector, {
-          slidesPerView: 1.1,
-          spaceBetween: 14,
-          loop: false,
-          navigation: {
-            nextEl: `${selector} .swiper-button-next`,
-            prevEl: `${selector} .swiper-button-prev`,
-          },
-          breakpoints: {
-            576: { slidesPerView: 1.6 },
-            768: { slidesPerView: 2.2 },
-            992: { slidesPerView: 3 },
-          },
-        });
-      };
-
-      initSwiper("#images-swiper");
-      initSwiper("#videos-swiper");
-      initSwiper("#pdfs-swiper");
     </script>
   </body>
 </html>
+
+
+

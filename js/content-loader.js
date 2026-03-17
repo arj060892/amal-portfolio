@@ -1,14 +1,65 @@
-// Load everything from content.json
-fetch("data/content.json")
-  .then((res) => res.json())
-  .then((data) => {
-    renderImagesCarousel(data.images || []);
-    renderVideosCarousel(data.videos || []);
-    renderPdfsCarousel(data.pdfs || []);
-    renderPhotography(data.photos || []);
-    initSwipers();
-  })
-  .catch((err) => console.error("Content load error:", err));
+const SITE_VERSION = window.__SITE_VERSION__ || "";
+
+function withCacheBust(url) {
+  if (!SITE_VERSION) return url;
+  if (window.location && window.location.protocol === "file:") return url;
+  if (!url || /^https?:\/\//i.test(url)) return url;
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}v=${encodeURIComponent(SITE_VERSION)}`;
+}
+
+function normalizeItem(item) {
+  if (!item) return { url: "" };
+  return typeof item === "string" ? { url: item } : item;
+}
+
+function escapeHtml(str) {
+  return String(str || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function clearById(id) {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = "";
+}
+
+function renderAll(data) {
+  clearById("dashboards-swiper-wrapper");
+  clearById("images-swiper-wrapper");
+  clearById("videos-swiper-wrapper");
+  clearById("pdfs-swiper-wrapper");
+  clearById("photo-gallery");
+
+  renderDashboardsCarousel(data.dashboards || []);
+  renderImagesCarousel(data.images || []);
+  renderVideosCarousel(data.videos || []);
+  renderPdfsCarousel(data.pdfs || []);
+  renderPhotography(data.photos || []);
+  initSwipers();
+}
+
+const INLINE_CONTENT = window.__CONTENT__ || null;
+
+// When opened directly via `file://`, browsers often block fetch due to CORS.
+if (window.location && window.location.protocol === "file:" && INLINE_CONTENT) {
+  renderAll(INLINE_CONTENT);
+} else {
+  fetch(withCacheBust("data/content.json"), { cache: "no-store" })
+    .then((res) => res.json())
+    .then((data) => renderAll(data))
+    .catch((err) => {
+      if (INLINE_CONTENT) {
+        console.warn("Fetch blocked; using inline content fallback.", err);
+        renderAll(INLINE_CONTENT);
+        return;
+      }
+      console.error("Content load error:", err);
+    });
+}
 
 // ============================
 // IMAGES CAROUSEL
@@ -18,16 +69,17 @@ function renderImagesCarousel(items) {
   if (!wrapper) return;
 
   items.forEach((url) => {
+    const src = withCacheBust(url);
     const slide = document.createElement("div");
     slide.className = "swiper-slide p-0";
     slide.innerHTML = `
       <div class="ratio ratio-4x3">
-        <img src="${url}"
+        <img src="${src}"
              loading="lazy"
              style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
       </div>
     `;
-    slide.onclick = () => openImageModal(url);
+    slide.onclick = () => openImageModal(src);
     wrapper.appendChild(slide);
   });
 }
@@ -119,29 +171,98 @@ function getInstagramThumbnail(url) {
 }
 
 // ============================
+// DASHBOARDS CAROUSEL (PDF thumbnails via PDF.js)
+// ============================
+function renderDashboardsCarousel(items) {
+  const wrapper = document.getElementById("dashboards-swiper-wrapper");
+  if (!wrapper) return;
+
+  items.forEach((raw) => {
+    const item = normalizeItem(raw);
+    const href = withCacheBust(item.url);
+
+    const slide = document.createElement("div");
+    slide.className = "swiper-slide p-0";
+
+    const title = item.title ? escapeHtml(item.title) : "";
+    const subtitle = item.subtitle ? escapeHtml(item.subtitle) : "";
+    const tags = Array.isArray(item.tags) ? item.tags.map(escapeHtml) : [];
+
+    slide.innerHTML = `
+      <div class="work-thumb ratio ratio-4x3" role="button" aria-label="Open dashboard PDF">
+        <object class="pdf-embed" data="${href}#page=1&zoom=page-width" type="application/pdf" aria-label="Dashboard preview">
+          <div class="pdf-fallback">
+            Preview not available. Click to open.
+          </div>
+        </object>
+        <div class="work-meta">
+          ${title ? `<div class="work-title">${title}</div>` : ""}
+          ${subtitle ? `<div class="work-subtitle">${subtitle}</div>` : ""}
+          ${
+            tags.length
+              ? `<div class="work-tags">${tags
+                  .slice(0, 4)
+                  .map((t) => `<span class="work-tag">${t}</span>`)
+                  .join("")}</div>`
+              : ""
+          }
+        </div>
+      </div>
+    `;
+
+    wrapper.appendChild(slide);
+
+    slide.onclick = () => openPdfModal(href);
+  });
+}
+
+// ============================
 // PDF CAROUSEL (thumbnail via PDF.js)
 // ============================
 function renderPdfsCarousel(items) {
   const wrapper = document.getElementById("pdfs-swiper-wrapper");
   if (!wrapper) return;
 
-  items.forEach((url) => {
+  items.forEach((raw) => {
+    const item = normalizeItem(raw);
+    const href = withCacheBust(item.url);
     const slide = document.createElement("div");
     slide.className = "swiper-slide p-0";
 
+    const title = item.title ? escapeHtml(item.title) : "";
+    const subtitle = item.subtitle ? escapeHtml(item.subtitle) : "";
+    const tags = Array.isArray(item.tags) ? item.tags.map(escapeHtml) : [];
+    const meta =
+      title || subtitle || tags.length
+        ? `
+      <div class="work-meta">
+        ${title ? `<div class="work-title">${title}</div>` : ""}
+        ${subtitle ? `<div class="work-subtitle">${subtitle}</div>` : ""}
+        ${
+          tags.length
+            ? `<div class="work-tags">${tags
+                .slice(0, 4)
+                .map((t) => `<span class="work-tag">${t}</span>`)
+                .join("")}</div>`
+            : ""
+        }
+      </div>
+    `
+        : "";
+
     slide.innerHTML = `
-      <div class="ratio ratio-4x3"
-           style="border-radius:14px;background:#111830;cursor:pointer;">
+      <div class="work-thumb ratio ratio-4x3" role="button" aria-label="Open PDF">
         <canvas class="pdf-thumb" style="width:100%;border-radius:14px;"></canvas>
+        ${meta}
       </div>
     `;
 
     wrapper.appendChild(slide);
 
     const canvas = slide.querySelector(".pdf-thumb");
-    generatePdfThumbnail(url, canvas);
+    generatePdfThumbnail(href, canvas);
 
-    slide.onclick = () => openPdfModal(url);
+    slide.onclick = () => openPdfModal(href);
   });
 }
 
@@ -156,8 +277,9 @@ function renderPhotography(items) {
   gallery.classList.remove("row", "g-3");
 
   items.forEach((url) => {
+    const src = withCacheBust(url);
     const img = document.createElement("img");
-    img.src = url;
+    img.src = src;
     img.loading = "lazy";
     img.style.width = "100%";
     img.style.marginBottom = "16px";
@@ -166,7 +288,7 @@ function renderPhotography(items) {
     img.style.display = "inline-block";
     img.style.breakInside = "avoid";
 
-    img.onclick = () => openImageModal(url);
+    img.onclick = () => openImageModal(src);
     gallery.appendChild(img);
   });
 }
@@ -179,10 +301,6 @@ function initSwipers() {
     spaceBetween: 20,
     slidesPerView: 1.15,
     loop: false,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
     breakpoints: {
       640: { slidesPerView: 1.4 },
       768: { slidesPerView: 1.8 },
@@ -190,15 +308,23 @@ function initSwipers() {
     },
   };
 
-  if (document.querySelector("#images-swiper")) {
-    new Swiper("#images-swiper", options);
-  }
-  if (document.querySelector("#videos-swiper")) {
-    new Swiper("#videos-swiper", options);
-  }
-  if (document.querySelector("#pdfs-swiper")) {
-    new Swiper("#pdfs-swiper", options);
-  }
+  const init = (selector) => {
+    const el = document.querySelector(selector);
+    if (!el || el.swiper) return;
+
+    const nextEl = el.querySelector(".swiper-button-next");
+    const prevEl = el.querySelector(".swiper-button-prev");
+
+    new Swiper(el, {
+      ...options,
+      navigation: nextEl && prevEl ? { nextEl, prevEl } : undefined,
+    });
+  };
+
+  init("#dashboards-swiper");
+  init("#images-swiper");
+  init("#videos-swiper");
+  init("#pdfs-swiper");
 }
 
 // ============================
@@ -211,7 +337,11 @@ function generatePdfThumbnail(pdfUrl, canvasEl) {
   }
 
   pdfjsLib
-    .getDocument(pdfUrl)
+    .getDocument({
+      url: pdfUrl,
+      disableRange: window.location && window.location.protocol === "file:",
+      disableStream: window.location && window.location.protocol === "file:",
+    })
     .promise.then((pdf) => pdf.getPage(1))
     .then((page) => {
       const viewport = page.getViewport({ scale: 0.4 });
@@ -253,7 +383,11 @@ function openPdfModal(url) {
   pagesContainer.innerHTML = ""; // Clear previous pages
 
   pdfjsLib
-    .getDocument(url)
+    .getDocument({
+      url,
+      disableRange: window.location && window.location.protocol === "file:",
+      disableStream: window.location && window.location.protocol === "file:",
+    })
     .promise.then(async (pdf) => {
       console.log(`PDF loaded: ${pdf.numPages} pages`);
 
@@ -274,7 +408,10 @@ function openPdfModal(url) {
         pagesContainer.appendChild(canvas);
       }
     })
-    .catch((err) => console.error("Error loading multi-page PDF:", err));
+    .catch((err) => {
+      console.error("Error loading multi-page PDF:", err);
+      window.open(url, "_blank");
+    });
 
   new bootstrap.Modal(modal).show();
 }
